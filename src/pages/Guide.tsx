@@ -1,8 +1,11 @@
-import { motion } from 'framer-motion'
+import { useState } from 'react'
+import { motion, AnimatePresence } from 'framer-motion'
 import { Helmet } from 'react-helmet-async'
+import { Award, ZoomIn, X } from 'lucide-react'
 import SectionTitle from '@/components/ui/SectionTitle'
 
 import memberOrg from '@/assets/misc/member_organization.JPG'
+import evaluationReport from '@/assets/images/evaluation_report_2026.jpg'
 
 const fadeUp = {
   initial: { opacity: 0, y: 30 },
@@ -113,6 +116,8 @@ const regulations = [
 ]
 
 export default function Guide() {
+  const [lightboxOpen, setLightboxOpen] = useState(false)
+
   return (
     <>
       <Helmet>
@@ -149,14 +154,121 @@ export default function Guide() {
         </div>
       </section>
 
-      {/* ===== 시설의 규모 ===== */}
-      <section className="bg-surface-dim" style={{ padding: '80px 0' }}>
-        <div className="mx-auto max-w-[1280px] px-4 sm:px-6" style={{ margin: '0 auto' }}>
-          <SectionTitle subtitle="Scale" title="시설의 규모" />
-          <motion.p {...fadeUp} className="text-center text-text-secondary">
-            ○ 홈페이지 &ldquo;요양원 소개&rdquo; 의 내용과 같습니다.
-          </motion.p>
+      {/* ===== 정기평가 ===== */}
+      <section className="relative overflow-hidden bg-surface-dim" style={{ padding: '80px 0' }}>
+        {/* 데코레이션 블러 */}
+        <div className="pointer-events-none absolute -top-40 left-1/2 h-[480px] w-[480px] -translate-x-1/2 rounded-full bg-primary-200/30 blur-3xl" />
+        <div className="pointer-events-none absolute -bottom-32 -right-32 h-80 w-80 rounded-full bg-warm-100/50 blur-3xl" />
+
+        <div className="relative mx-auto max-w-[1280px] px-4 sm:px-6" style={{ margin: '0 auto' }}>
+          <SectionTitle subtitle="Evaluation" title="정기평가" />
+
+          <motion.div {...fadeUp} style={{ maxWidth: '1080px', width: '100%', marginLeft: 'auto', marginRight: 'auto' }}>
+            <div className="grid overflow-hidden rounded-3xl bg-white shadow-xl shadow-primary-900/5 ring-1 ring-primary-100/60 md:grid-cols-5">
+              {/* 정보 패널 */}
+              <div className="relative overflow-hidden bg-gradient-to-br from-primary-600 to-primary-800 text-center text-white md:col-span-2" style={{ padding: '40px 32px' }}>
+                {/* 도장 느낌의 데코 원 */}
+                <div className="pointer-events-none absolute -right-16 -bottom-16 h-56 w-56 rounded-full border-[3px] border-white/10" />
+                <div className="pointer-events-none absolute -right-8 -bottom-8 h-36 w-36 rounded-full border-2 border-white/10" />
+
+                <div className="relative flex flex-col items-center">
+                  <div className="inline-flex items-center rounded-full bg-white/15 backdrop-blur-sm" style={{ gap: '6px', padding: '6px 12px' }}>
+                    <Award size={14} />
+                    <span className="text-xs font-medium">국민건강보험공단 인증</span>
+                  </div>
+
+                  <div style={{ marginTop: '32px' }}>
+                    <div className="text-sm text-primary-100">2025년도 정기평가</div>
+                    <div className="flex items-end justify-center" style={{ gap: '8px', marginTop: '6px' }}>
+                      <span className="font-black leading-none" style={{ fontSize: '88px' }}>A</span>
+                      <span className="text-2xl font-bold" style={{ marginBottom: '10px' }}>최우수</span>
+                    </div>
+                  </div>
+
+                  <div className="w-full border-t border-white/20" style={{ marginTop: '28px', paddingTop: '20px' }}>
+                    <div className="text-xs text-primary-100" style={{ marginBottom: '6px' }}>총 점</div>
+                    <div className="flex items-baseline justify-center" style={{ gap: '8px' }}>
+                      <span className="text-4xl font-bold">90.65</span>
+                      <span className="text-xs text-primary-100">/ 100</span>
+                    </div>
+                  </div>
+
+                  <div style={{ marginTop: '16px' }}>
+                    <div className="text-xs text-primary-100" style={{ marginBottom: '6px' }}>전체평균</div>
+                    <div className="text-lg font-semibold text-primary-100">83.05</div>
+                  </div>
+
+                  <div className="w-full border-t border-white/20 text-[11px] leading-relaxed text-primary-100/90" style={{ marginTop: '28px', paddingTop: '16px' }}>
+                    <div>장기요양기관기호 · 15011000168</div>
+                    <div style={{ marginTop: '2px' }}>통보일 · 2026년 3월 26일</div>
+                  </div>
+                </div>
+              </div>
+
+              {/* 통보서 이미지 */}
+              <div className="flex items-center justify-center bg-gray-50 md:col-span-3" style={{ padding: '40px 32px' }}>
+                <motion.button
+                  type="button"
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                  transition={{ duration: 0.2 }}
+                  className="group relative w-full cursor-zoom-in"
+                  style={{ maxWidth: '420px' }}
+                  onClick={() => setLightboxOpen(true)}
+                  aria-label="평가결과 통보서 크게 보기"
+                >
+                  <div className="relative overflow-hidden rounded-xl bg-white shadow-lg ring-1 ring-gray-200/80">
+                    <img
+                      src={evaluationReport}
+                      alt="2025년도 장기요양기관 정기평가 결과 통보서"
+                      className="block w-full"
+                      loading="lazy"
+                    />
+                    <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/55 via-black/0 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+                    <div
+                      className="pointer-events-none absolute left-1/2 inline-flex -translate-x-1/2 items-center rounded-full bg-white/95 text-xs font-medium text-text-primary opacity-0 shadow-md backdrop-blur-sm transition-all duration-300 group-hover:opacity-100"
+                      style={{ gap: '6px', padding: '8px 14px', bottom: '16px' }}
+                    >
+                      <ZoomIn size={14} />
+                      크게 보기
+                    </div>
+                  </div>
+                </motion.button>
+              </div>
+            </div>
+          </motion.div>
         </div>
+
+        {/* 라이트박스 */}
+        <AnimatePresence>
+          {lightboxOpen && (
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              className="fixed inset-0 z-[100] flex items-center justify-center bg-black/90 p-4"
+              onClick={() => setLightboxOpen(false)}
+            >
+              <button
+                type="button"
+                className="absolute right-4 top-4 z-10 rounded-full bg-white/10 p-2 text-white backdrop-blur-sm transition-colors hover:bg-white/20"
+                onClick={() => setLightboxOpen(false)}
+                aria-label="닫기"
+              >
+                <X size={24} />
+              </button>
+              <motion.img
+                initial={{ opacity: 0, scale: 0.92 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.92 }}
+                src={evaluationReport}
+                alt="2025년도 장기요양기관 정기평가 결과 통보서"
+                className="max-h-[90vh] max-w-[95vw] rounded-lg object-contain shadow-2xl"
+                onClick={(e) => e.stopPropagation()}
+              />
+            </motion.div>
+          )}
+        </AnimatePresence>
       </section>
 
       {/* ===== 조직구성 ===== */}
