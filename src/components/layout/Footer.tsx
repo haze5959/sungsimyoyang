@@ -43,7 +43,7 @@ export default function Footer() {
                 요양원 소개
               </Link>
               <Link to="/guide" className="transition-colors hover:text-white" style={{ color: '#cbd5e1', fontSize: '14px', textDecoration: 'none' }}>
-                이용안내
+                운영현황
               </Link>
               <Link to="/consult" className="transition-colors hover:text-white" style={{ color: '#cbd5e1', fontSize: '14px', textDecoration: 'none' }}>
                 상담문의

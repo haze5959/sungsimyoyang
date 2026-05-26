@@ -65,7 +65,7 @@ export default function Header() {
     >
       {/* Top bar - 데스크톱 전용 */}
       <div className="hidden border-b border-primary-100/50 bg-primary-50/60 lg:block">
-        <div className="mx-auto flex w-full items-center justify-end gap-6 px-6 py-2 text-xs text-text-secondary lg:px-12 xl:px-16">
+        <div className="mx-auto flex w-full items-center justify-end gap-6 text-xs text-text-secondary" style={{ padding: '8px 24px' }}>
           <a href="tel:064-757-7780" className="flex items-center gap-1 transition-colors hover:text-primary-600">
             <Phone size={11} />
             064-757-7780
@@ -76,7 +76,7 @@ export default function Header() {
       </div>
 
       {/* Main navigation */}
-      <nav className="mx-auto w-full px-4 sm:px-6 lg:px-12 xl:px-16">
+      <nav className="mx-auto w-full" style={{ padding: '0 24px' }}>
         <div className="flex h-16 items-center justify-between lg:h-24">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-3 transition-opacity hover:opacity-80">
@@ -172,7 +172,7 @@ export default function Header() {
             transition={{ duration: 0.3, ease: 'easeInOut' }}
             className="overflow-hidden border-t border-primary-100/50 bg-white lg:hidden"
           >
-            <div className="space-y-1 px-4 py-4">
+            <div className="space-y-1" style={{ padding: '16px 24px' }}>
               {navItems.map((item, idx) => (
                 <div key={item.path + idx}>
                   <Link

@@ -5,7 +5,7 @@ import { Helmet } from 'react-helmet-async'
 import { Phone, Heart, Shield, Users, Home as HomeIcon, ChevronLeft, ChevronRight, ArrowRight } from 'lucide-react'
 import SectionTitle from '@/components/ui/SectionTitle'
 
-import heroImg1 from '@/assets/images/sungsimIntro01.JPG'
+// import heroImg1 from '@/assets/images/sungsimIntro01.JPG'
 import heroImg3 from '@/assets/images/sungsimIntro03.jpg'
 import heroImg4 from '@/assets/images/sungsimIntro04.jpg'
 import heroImg5 from '@/assets/images/sungsimIntro05.jpg'
@@ -16,7 +16,7 @@ import img9 from '@/assets/images/9.JPG'
 import img14 from '@/assets/images/14.JPG'
 import img15 from '@/assets/images/15.JPG'
 
-const heroImages = [heroImg1, heroImg3, heroImg4, heroImg5, heroImg6]
+const heroImages = [heroImg3, heroImg4, heroImg5, heroImg6]
 
 const features = [
   {
@@ -86,7 +86,7 @@ export default function Home() {
             <img
               src={heroImages[currentSlide]}
               alt="성심노인요양원"
-              className="h-full w-full object-cover"
+              style={{ width: '100%', height: '100%', objectFit: 'cover' }}
             />
           </motion.div>
         </AnimatePresence>
