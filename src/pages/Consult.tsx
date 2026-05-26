@@ -27,6 +27,12 @@ export default function Consult() {
       <Helmet>
         <title>상담문의 - 제주 성심노인요양원</title>
         <meta name="description" content="제주 성심노인요양원 상담문의 - 전화 064-757-7780" />
+        <link rel="canonical" href="http://sungsimyoyang.co.kr/consult" />
+        <meta property="og:title" content="상담문의 - 제주 성심노인요양원" />
+        <meta property="og:description" content="전화 064-757-7780. 입소 상담 및 시설 이용 문의를 받습니다." />
+        <meta property="og:url" content="http://sungsimyoyang.co.kr/consult" />
+        <meta name="twitter:title" content="상담문의 - 제주 성심노인요양원" />
+        <meta name="twitter:description" content="전화 064-757-7780. 입소 상담 및 시설 이용 문의를 받습니다." />
       </Helmet>
 
       {/* Page Header */}

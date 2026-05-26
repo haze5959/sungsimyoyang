@@ -133,6 +133,12 @@ export default function Introduce() {
       <Helmet>
         <title>요양원 소개 - 제주 성심노인요양원</title>
         <meta name="description" content="제주 성심노인요양원은 2010년 설립된 정부지정 노인전문 요양기관입니다." />
+        <link rel="canonical" href="http://sungsimyoyang.co.kr/introduce" />
+        <meta property="og:title" content="요양원 소개 - 제주 성심노인요양원" />
+        <meta property="og:description" content="2010년 설립된 정부지정 노인전문 요양기관. 인사말, 시설안내, 프로그램 등을 소개합니다." />
+        <meta property="og:url" content="http://sungsimyoyang.co.kr/introduce" />
+        <meta name="twitter:title" content="요양원 소개 - 제주 성심노인요양원" />
+        <meta name="twitter:description" content="2010년 설립된 정부지정 노인전문 요양기관. 인사말, 시설안내, 프로그램 등을 소개합니다." />
       </Helmet>
 
       {/* Page Header */}

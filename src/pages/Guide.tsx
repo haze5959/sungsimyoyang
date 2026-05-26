@@ -122,7 +122,13 @@ export default function Guide() {
     <>
       <Helmet>
         <title>운영현황 - 제주 성심노인요양원</title>
-        <meta name="description" content="제주 성심노인요양원 운영현황 - 운영현황, 조직구성, 비용안내, 운영규정" />
+        <meta name="description" content="제주 성심노인요양원 운영현황 - 운영현황, 정기평가, 조직구성, 비용안내, 운영규정" />
+        <link rel="canonical" href="http://sungsimyoyang.co.kr/guide" />
+        <meta property="og:title" content="운영현황 - 제주 성심노인요양원" />
+        <meta property="og:description" content="운영현황, 정기평가 A(최우수) 등급, 조직구성, 비용안내, 운영규정 안내." />
+        <meta property="og:url" content="http://sungsimyoyang.co.kr/guide" />
+        <meta name="twitter:title" content="운영현황 - 제주 성심노인요양원" />
+        <meta name="twitter:description" content="운영현황, 정기평가 A(최우수) 등급, 조직구성, 비용안내, 운영규정 안내." />
       </Helmet>
 
       {/* Page Header */}

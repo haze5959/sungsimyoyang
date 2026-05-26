@@ -1,0 +1,22 @@
+{
+  "name": "제주 성심노인요양원",
+  "short_name": "성심요양원",
+  "description": "제주특별자치도 제주시 황새왓길 48번지. 정부지정 노인전문 요양기관",
+  "icons": [
+    {
+      "src": "/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#3f9580",
+  "background_color": "#ffffff",
+  "display": "standalone",
+  "lang": "ko",
+  "start_url": "/"
+}

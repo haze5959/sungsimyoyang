@@ -69,6 +69,12 @@ export default function Home() {
       <Helmet>
         <title>제주 성심노인요양원 - 정부지정 노인전문 요양기관</title>
         <meta name="description" content="제주 성심노인요양원은 2010년 설립된 정부지정 노인전문 요양기관으로, 제주시 황새왓길 48에 위치해 있습니다." />
+        <link rel="canonical" href="http://sungsimyoyang.co.kr/" />
+        <meta property="og:title" content="제주 성심노인요양원 - 정부지정 노인전문 요양기관" />
+        <meta property="og:description" content="2010년 설립된 정부지정 노인전문 요양기관. 제주시 황새왓길 48에 위치해 있습니다." />
+        <meta property="og:url" content="http://sungsimyoyang.co.kr/" />
+        <meta name="twitter:title" content="제주 성심노인요양원 - 정부지정 노인전문 요양기관" />
+        <meta name="twitter:description" content="2010년 설립된 정부지정 노인전문 요양기관. 제주시 황새왓길 48에 위치해 있습니다." />
       </Helmet>
 
       {/* ===== Hero Section ===== */}

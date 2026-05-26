@@ -18,6 +18,12 @@ export default function Location() {
       <Helmet>
         <title>찾아오시는 길 - 제주 성심노인요양원</title>
         <meta name="description" content="제주 성심노인요양원 찾아오시는 길 - 제주시 황새왓길 48(화북이동)" />
+        <link rel="canonical" href="http://sungsimyoyang.co.kr/location" />
+        <meta property="og:title" content="찾아오시는 길 - 제주 성심노인요양원" />
+        <meta property="og:description" content="제주시 황새왓길 48(화북이동). 카카오맵, 교통편 안내를 확인하세요." />
+        <meta property="og:url" content="http://sungsimyoyang.co.kr/location" />
+        <meta name="twitter:title" content="찾아오시는 길 - 제주 성심노인요양원" />
+        <meta name="twitter:description" content="제주시 황새왓길 48(화북이동). 카카오맵, 교통편 안내를 확인하세요." />
       </Helmet>
 
       {/* Page Header */}
