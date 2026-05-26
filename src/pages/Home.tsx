@@ -95,33 +95,33 @@ export default function Home() {
         <div className="hero-gradient absolute inset-0" />
 
         {/* Content */}
-        <div className="relative z-10 flex h-full w-full items-center justify-center">
-          <div className="w-full max-w-7xl px-4 sm:px-6">
+        <div className="relative z-10 flex h-full w-full items-center justify-center" style={{ paddingTop: '100px' }}>
+          <div className="w-full max-w-[1280px] px-4 sm:px-6" style={{ margin: '0 auto' }}>
             <motion.div
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.3 }}
-              className="max-w-2xl"
+              className="mx-auto flex max-w-3xl flex-col items-center text-center"
             >
               <motion.span
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.6, delay: 0.5 }}
-                className="mb-6 inline-flex items-center justify-center rounded-full bg-primary-500/90 text-[15px] font-bold tracking-wide text-white shadow-lg backdrop-blur-sm"
+                className="mb-8 inline-flex items-center justify-center rounded-full bg-primary-500/90 text-[15px] font-bold tracking-wide text-white shadow-lg backdrop-blur-sm"
                 style={{ padding: '10px 24px' }}
               >
                 정부지정 노인전문 요양기관
               </motion.span>
-              <h1 className="mb-6 text-3xl font-extrabold leading-tight text-white sm:text-4xl md:text-5xl lg:text-6xl">
+              <h1 className="text-3xl font-extrabold leading-tight text-white sm:text-4xl md:text-5xl lg:text-6xl" style={{ marginBottom: '32px' }}>
                 성심(誠心)을 다하는
                 <br />
                 <span className="text-primary-300">어르신의 행복한 쉼터</span>
               </h1>
-              <p className="mb-8 max-w-lg text-base leading-relaxed text-primary-100/90 sm:text-lg">
+              <p className="max-w-lg text-base leading-relaxed text-primary-100/90 sm:text-lg" style={{ marginBottom: '48px' }}>
                 경로효친의 실천현장으로 가정과 같은 분위기에서 어르신들의 행복한 쉼터가 되고,
                 부양가족의 정서적‧경제적 부담을 덜어드리는 안심할 수 있는 요양원입니다.
               </p>
-              <div className="flex flex-col items-start gap-4 sm:flex-row sm:items-center sm:gap-5">
+              <div className="flex flex-col items-center justify-center sm:flex-row" style={{ gap: '24px' }}>
                 <Link
                   to="/introduce"
                   className="inline-flex items-center justify-center gap-2.5 rounded-full bg-white text-lg font-bold text-primary-700 shadow-xl transition-all hover:bg-primary-50 hover:shadow-2xl"
@@ -170,13 +170,13 @@ export default function Home() {
       </section>
 
       {/* ===== Features Section ===== */}
-      <section className="relative py-16 md:py-24" id="features">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6">
+      <section className="relative flex flex-col items-center" id="features" style={{ padding: '80px 0' }}>
+        <div className="w-full max-w-[1280px] px-4 sm:px-6" style={{ margin: '0 auto' }}>
           <SectionTitle
             subtitle="Why Sungsim"
             title="성심노인요양원을 선택해야 하는 이유"
           />
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4" style={{ gap: '32px' }}>
             {features.map((feature, idx) => (
               <motion.div
                 key={idx}
@@ -184,13 +184,27 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: '-50px' }}
                 transition={{ duration: 0.5, delay: idx * 0.1 }}
-                className="card-hover group rounded-2xl border border-primary-100/50 bg-white p-6 shadow-sm md:p-8"
+                className="card-hover group flex flex-col items-center rounded-2xl border border-primary-100/50 bg-white text-center shadow-sm"
+                style={{ padding: '24px 16px', margin: '8px' }}
               >
-                <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-primary-50 to-primary-100 text-primary-500 transition-colors group-hover:from-primary-400 group-hover:to-primary-500 group-hover:text-white">
+                <div 
+                  className="mx-auto flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-primary-50 to-primary-100 text-primary-500 transition-colors group-hover:from-primary-400 group-hover:to-primary-500 group-hover:text-white"
+                  style={{ marginBottom: '16px' }}
+                >
                   <feature.icon size={24} />
                 </div>
-                <h3 className="mb-2 text-lg font-bold text-text-primary">{feature.title}</h3>
-                <p className="text-sm leading-relaxed text-text-secondary">{feature.desc}</p>
+                <h3 
+                  className="text-lg font-bold text-text-primary"
+                  style={{ marginBottom: '12px' }}
+                >
+                  {feature.title}
+                </h3>
+                <p 
+                  className="text-sm text-text-secondary"
+                  style={{ lineHeight: '1.7' }}
+                >
+                  {feature.desc}
+                </p>
               </motion.div>
             ))}
           </div>
@@ -198,13 +212,13 @@ export default function Home() {
       </section>
 
       {/* ===== Gallery Preview Section ===== */}
-      <section className="bg-surface-dim py-16 md:py-24" id="gallery-preview">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6">
+      <section className="bg-surface-dim flex flex-col items-center" id="gallery-preview" style={{ padding: '80px 0' }}>
+        <div className="w-full max-w-[1280px] px-4 sm:px-6" style={{ margin: '0 auto' }}>
           <SectionTitle
             subtitle="Gallery"
             title="성심노인요양원 전경"
           />
-          <div className="grid grid-cols-2 gap-3 md:gap-5 lg:grid-cols-4">
+          <div className="grid grid-cols-2 lg:grid-cols-4" style={{ gap: '24px' }}>
             {galleryImages.map((img, idx) => (
               <motion.div
                 key={idx}
@@ -227,11 +241,13 @@ export default function Home() {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            className="mt-8 text-center"
+            className="text-center"
+            style={{ marginTop: '40px' }}
           >
             <Link
               to="/introduce#gallery"
-              className="inline-flex items-center gap-2 rounded-full border border-primary-200 px-6 py-2.5 text-sm font-medium text-primary-600 transition-all hover:bg-primary-50"
+              className="inline-flex items-center gap-2 rounded-full border border-primary-200 text-sm font-medium text-primary-600 transition-all hover:bg-primary-50"
+              style={{ marginTop: '56px', padding: '12px 28px', display: 'inline-flex' }}
             >
               더 많은 사진 보기
               <ArrowRight size={14} />
@@ -241,22 +257,23 @@ export default function Home() {
       </section>
 
       {/* ===== CTA Section ===== */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-primary-600 via-primary-500 to-primary-400 py-16 md:py-24">
+      <section className="relative flex flex-col items-center overflow-hidden bg-gradient-to-br from-primary-600 via-primary-500 to-primary-400" style={{ padding: '80px 0' }}>
         <div className="absolute inset-0 opacity-10">
           <div className="absolute -top-24 -right-24 h-96 w-96 rounded-full bg-white/20" />
           <div className="absolute -bottom-24 -left-24 h-72 w-72 rounded-full bg-white/10" />
         </div>
-        <div className="relative mx-auto max-w-4xl px-4 text-center sm:px-6">
+        <div className="relative w-full max-w-4xl px-4 text-center sm:px-6" style={{ margin: '0 auto', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
+            style={{ width: '100%', textAlign: 'center' }}
           >
-            <h2 className="mb-4 text-2xl font-bold text-white md:text-3xl lg:text-4xl">
+            <h2 className="text-3xl font-extrabold text-white md:text-4xl" style={{ textAlign: 'center', marginBottom: '24px' }}>
               상담문의는 아래 전화번호나 E-Mail로 부탁드립니다.
             </h2>
-            <p className="mb-8 text-lg text-primary-100">
+            <p className="text-lg text-primary-100" style={{ marginBottom: '40px' }}>
               궁금한 점이 있으시면 언제든지 연락 주세요.
             </p>
             <div className="flex flex-col items-center justify-center gap-5 sm:flex-row">

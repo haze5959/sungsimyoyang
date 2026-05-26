@@ -21,7 +21,7 @@ const navItems: NavItem[] = [
     ],
   },
   {
-    label: '이용안내',
+    label: '운영현황',
     path: '/guide',
     children: [
       { label: '요양원 운영현황', path: '/guide' },
@@ -65,7 +65,7 @@ export default function Header() {
     >
       {/* Top bar - 데스크톱 전용 */}
       <div className="hidden border-b border-primary-100/50 bg-primary-50/60 lg:block">
-        <div className="mx-auto flex max-w-7xl items-center justify-end gap-6 px-6 py-1.5 text-xs text-text-secondary">
+        <div className="mx-auto flex w-full items-center justify-end gap-6 px-6 py-2 text-xs text-text-secondary lg:px-12 xl:px-16">
           <a href="tel:064-757-7780" className="flex items-center gap-1 transition-colors hover:text-primary-600">
             <Phone size={11} />
             064-757-7780
@@ -76,8 +76,8 @@ export default function Header() {
       </div>
 
       {/* Main navigation */}
-      <nav className="mx-auto max-w-7xl px-4 sm:px-6">
-        <div className="flex h-16 items-center justify-between lg:h-20">
+      <nav className="mx-auto w-full px-4 sm:px-6 lg:px-12 xl:px-16">
+        <div className="flex h-16 items-center justify-between lg:h-24">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-3 transition-opacity hover:opacity-80">
             <img src={logo} alt="성심노인요양원" className="h-10 w-10 rounded-lg object-cover lg:h-12 lg:w-12" />
@@ -88,7 +88,7 @@ export default function Header() {
           </Link>
 
           {/* Desktop menu */}
-          <div className="hidden items-center gap-1 lg:flex">
+          <div className="hidden items-center gap-2 lg:flex">
             {navItems.map((item, idx) => (
               <div
                 key={item.path + idx}
@@ -98,11 +98,12 @@ export default function Header() {
               >
                 <Link
                   to={item.path}
-                  className={`relative rounded-lg px-4 py-2.5 text-[15px] font-medium transition-colors ${
+                  className={`relative rounded-lg text-[15px] font-semibold transition-all duration-200 ${
                     location.pathname === item.path
-                      ? 'text-primary-600'
-                      : 'text-text-primary hover:text-primary-600'
+                      ? 'bg-primary-50 text-primary-600 shadow-sm shadow-primary-200/50'
+                      : 'text-text-primary hover:bg-primary-50/80 hover:text-primary-600 hover:shadow-sm hover:shadow-primary-200/30'
                   }`}
+                  style={{ padding: '10px 20px', margin: '0 4px' }}
                 >
                   {item.label}
                   {location.pathname === item.path && (
@@ -128,7 +129,8 @@ export default function Header() {
                         <Link
                           key={child.path}
                           to={child.path}
-                          className="block px-4 py-2.5 text-sm text-text-secondary transition-colors hover:bg-primary-50 hover:text-primary-600"
+                          className="block text-sm text-text-secondary transition-colors hover:bg-primary-50 hover:text-primary-600"
+                          style={{ padding: '10px 16px' }}
                         >
                           {child.label}
                         </Link>
@@ -142,8 +144,8 @@ export default function Header() {
             {/* CTA */}
             <Link
               to="/consult"
-              className="ml-4 rounded-full bg-gradient-to-r from-primary-400 to-primary-500 text-[15px] font-bold tracking-wide text-white shadow-lg shadow-primary-400/25 transition-all hover:shadow-xl hover:shadow-primary-400/30 hover:brightness-105"
-              style={{ padding: '8px 20px' }}
+              className="rounded-full bg-gradient-to-r from-primary-400 to-primary-500 text-[15px] font-bold tracking-wide text-white shadow-lg shadow-primary-400/25 transition-all hover:shadow-xl hover:shadow-primary-400/30 hover:brightness-105"
+              style={{ padding: '10px 24px', marginLeft: '16px' }}
             >
               상담문의
             </Link>
@@ -175,11 +177,12 @@ export default function Header() {
                 <div key={item.path + idx}>
                   <Link
                     to={item.path}
-                    className={`block rounded-lg px-4 py-3 text-base font-medium transition-colors ${
+                    className={`block rounded-lg text-base font-medium transition-colors ${
                       location.pathname === item.path
                         ? 'bg-primary-50 text-primary-600'
                         : 'text-text-primary hover:bg-primary-50'
                     }`}
+                    style={{ padding: '12px 16px', marginBottom: '8px' }}
                   >
                     {item.label}
                   </Link>
@@ -189,7 +192,8 @@ export default function Header() {
                         <Link
                           key={child.path}
                           to={child.path}
-                          className="block rounded-lg px-3 py-2 text-sm text-text-secondary transition-colors hover:text-primary-600"
+                          className="block rounded-lg text-sm text-text-secondary transition-colors hover:text-primary-600"
+                          style={{ padding: '8px 12px', marginBottom: '4px' }}
                         >
                           {child.label}
                         </Link>

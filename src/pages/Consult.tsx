@@ -30,32 +30,32 @@ export default function Consult() {
       </Helmet>
 
       {/* Page Header */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-primary-600 to-primary-800 pt-28 pb-16 md:pt-36 md:pb-20">
+      <section className="relative overflow-hidden bg-gradient-to-br from-primary-600 to-primary-800" style={{ paddingTop: '160px', paddingBottom: '80px' }}>
         <div className="absolute inset-0 opacity-10">
           <div className="absolute -top-20 -right-20 h-80 w-80 rounded-full bg-white/20" />
         </div>
-        <div className="relative mx-auto max-w-7xl px-4 sm:px-6">
+        <div className="relative mx-auto max-w-[1280px] px-4 sm:px-6" style={{ margin: '0 auto' }}>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <span className="mb-2 text-sm font-medium text-primary-200">Contact</span>
+            <span className="mb-2 text-sm font-medium text-primary-200" style={{ display: 'block', marginBottom: '8px' }}>Contact</span>
             <h1 className="text-3xl font-bold text-white md:text-4xl">상담문의</h1>
           </motion.div>
         </div>
       </section>
 
       {/* ===== 상담안내 ===== */}
-      <section className="py-16 md:py-24">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6">
+      <section className="bg-surface-dim" style={{ padding: '80px 0' }}>
+        <div className="mx-auto max-w-[1280px] px-4 sm:px-6" style={{ margin: '0 auto' }}>
           <SectionTitle
             subtitle="Contact Us"
             title="상담문의는 아래 전화번호나 E-Mail로 부탁드립니다."
           />
 
           {/* 연락처 카드 */}
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3" style={{ gap: '24px' }}>
             {contactInfo.map((item, idx) => (
               <motion.div
                 key={idx}
@@ -63,12 +63,13 @@ export default function Consult() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: idx * 0.05 }}
-                className="card-hover rounded-2xl border border-primary-100/50 bg-white p-5 shadow-sm md:p-6"
+                className="card-hover rounded-2xl border border-primary-100/50 bg-white shadow-sm"
+                style={{ padding: '24px 16px', margin: '8px' }}
               >
-                <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-xl bg-primary-50 text-primary-500">
+                <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary-50 text-primary-500" style={{ marginBottom: '16px' }}>
                   <item.icon size={20} />
                 </div>
-                <p className="mb-1 text-xs font-medium text-text-muted">{item.label}</p>
+                <p className="text-xs font-medium text-text-muted" style={{ marginBottom: '4px' }}>{item.label}</p>
                 {item.href ? (
                   <a
                     href={item.href}
@@ -84,7 +85,7 @@ export default function Consult() {
           </div>
 
           {/* 명함 이미지 */}
-          <motion.div {...fadeUp} className="mt-12 flex justify-center">
+          <motion.div {...fadeUp} className="flex justify-center" style={{ marginTop: '48px' }}>
             <div className="overflow-hidden rounded-2xl shadow-lg">
               <img
                 src={businesscard}
@@ -95,10 +96,11 @@ export default function Consult() {
           </motion.div>
 
           {/* CTA 전화 */}
-          <motion.div {...fadeUp} className="mt-12 text-center">
+          <motion.div {...fadeUp} className="text-center" style={{ marginTop: '48px', textAlign: 'center' }}>
             <a
               href="tel:064-757-7780"
-              className="inline-flex items-center gap-3 rounded-full bg-gradient-to-r from-primary-400 to-primary-500 px-8 py-4 text-lg font-bold text-white shadow-xl shadow-primary-400/25 transition-all hover:shadow-2xl hover:brightness-105"
+              className="inline-flex items-center gap-3 rounded-full bg-gradient-to-r from-primary-400 to-primary-500 text-lg font-bold text-white shadow-xl shadow-primary-400/25 transition-all hover:shadow-2xl hover:brightness-105"
+              style={{ padding: '16px 32px' }}
             >
               <MessageCircle size={22} />
               지금 바로 전화 상담하기

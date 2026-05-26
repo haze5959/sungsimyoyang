@@ -18,19 +18,26 @@ export default function SectionTitle({ subtitle, title, description, align = 'ce
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: '-50px' }}
       transition={{ duration: 0.6 }}
-      className={`mb-10 flex flex-col ${alignClass} md:mb-14`}
+      className={`flex flex-col ${alignClass}`}
+      style={{ marginBottom: '56px', alignItems: align === 'center' ? 'center' : 'flex-start', textAlign: align === 'center' ? 'center' : 'left', width: '100%' }}
     >
       {subtitle && (
-        <span className="mb-2 text-sm font-semibold tracking-wider text-primary-500 uppercase">
+        <span 
+          className="text-sm font-semibold tracking-wider text-primary-500 uppercase"
+          style={{ marginBottom: '16px', display: 'block' }}
+        >
           {subtitle}
         </span>
       )}
       <h2 className="text-2xl font-bold text-text-primary md:text-3xl lg:text-4xl">
         {title}
       </h2>
-      <div className="section-divider mt-4" />
+      <div className="section-divider" style={{ marginTop: '24px', marginBottom: '24px' }} />
       {description && (
-        <p className="mt-4 max-w-2xl text-base leading-relaxed text-text-secondary md:text-lg">
+        <p 
+          className="max-w-2xl text-base leading-relaxed text-text-secondary md:text-lg"
+          style={{ marginTop: '24px' }}
+        >
           {description}
         </p>
       )}
